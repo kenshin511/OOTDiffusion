@@ -1,14 +1,17 @@
 # OOTDiffusion
-This repository is the official implementation of OOTDiffusion
+
 
 # docker
-`*hwcho/ootd:latest*`
+`hwcho/ootd:latest`
 
-`docker run --name cho_ootd --gpus all --rm -it -v ~/.ssh:/root/.ssh:ro --mount type=bind,source=/data2/vig/reidteam/,target=/data/ --env PYTHONPATH=/workspace --shm-size 8G --privileged *hwcho/ootd:latest*`
+`docker run --name cho_ootd --gpus all --rm -it -v ~/.ssh:/root/.ssh:ro --mount type=bind,source=/data2/vig/reidteam/,target=/data/ --env PYTHONPATH=/workspace --shm-size 8G --privileged hwcho/ootd:latest`
 
 # 메인 모델 및 기본 구성 요소 다운로드
+OOTDiffusion  
 `huggingface-cli download levihsu/OOTDiffusion --local-dir /data/models/ootd --local-dir-use-symlinks False`  
+humanparsing  
 `huggingface-cli download levihsu/OOTDiffusion --local-dir /data/models/ootd/humanparsing --local-dir-use-symlinks False --include "humanparsing/*"`  
+openpose  
 `huggingface-cli download levihsu/OOTDiffusion --local-dir** /data/models/ootd**/openpose --local-dir-use-symlinks False --include "openpose/*"`  
 CLIP  
 `huggingface-cli download openai/clip-vit-large-patch14 \
